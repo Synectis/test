@@ -1038,24 +1038,13 @@ OGGETTO_DRACONICO = re.compile(r"fornisce oggetti utili al proprio drago in camb
 @alemiBot.on_message(filters.chat(LOOTBOT) & filters.regex(
 	pattern=r"Entri in una stanza che non ha affatto le sembianze di una stanza, piuttosto un grosso parco" # Mercante Draconico
 ), group=P.dung)
-async def acquista_draconico_se_daily(client, message):
-	if CONFIG()["dungeon"]["auto"]:
-		match = OGGETTO_DRACONICO.search(message.text)
-		if CONFIG()["imprese"]["auto"] and "Scambio draconico" in LOOP.state["imprese"]["todo"] \
-		and match and match["state"] == "✅":
 			@create_task("Accetta offerta Mercante Draconico", client=client)
 			async def accept_drac(ctx):
 				await si(ctx)
 				await random_wait()
 				await prosegui_dungeon(ctx)
 			LOOP.add_task(accept_drac, prio=True)
-		else:
-			@create_task("Ignora Mercante Draconico", client=client)
-			async def no_merc_drac(ctx):
-				await no(ctx)
-				await random_wait()
-				await prosegui_dungeon(ctx)
-			LOOP.add_task(no_merc_drac, prio=True)
+		
 
 # Specchio
 @alemiBot.on_message(filters.chat(LOOTBOT) & filters.regex(pattern=r"Entri in una stanza con un piccolo specchio al centro. Ti avvicini"), group=P.dung)
