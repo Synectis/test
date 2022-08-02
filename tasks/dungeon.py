@@ -12,9 +12,9 @@ from plugins.lootbot.loop import LOOP, create_task
 from plugins.lootbot.tasks.craft import craft_sync, craft_quick
 
 PRIORITY_DEFAULT = ["-", "Persona in Pericolo", "Stanza dell'Energia", "Fontana di Mana", "Stanza Vuota",
-					 "Stanza del Cuore e dello Spirito","Stanza impolverata", "Scrigno", "Meditazione", "Stanza Divisa in Due",
+					 "Stanza del Cuore e dello Spirito","Stanza impolverata", "Scrigno", "Mercante Draconico", "Meditazione", "Stanza Divisa in Due",
 					 "Monete", "Spada o Bottino", "Pulsantiera", "Ninfa", "Mostro", "Marinaio e Dado",
-					 "Alchimista dell'Ovest", "Mercante Draconico", "Gioielliere Pazzo", "Predone", "Viandante",
+					 "Alchimista dell'Ovest", "Gioielliere Pazzo", "Predone", "Viandante",
 					 "Negozio di figurine", "Due Porte", "Vecchina", "Tre Incisioni", "Anziano Saggio",
 					 "Desideri", "Specchio Magico", "Pozzo Ricco", "Brucaliffo",
 					 "Trappola", "Ascia Gigante", "Leve", "Crepaccio", "Dragone del Soldato", "Bombarolo",
